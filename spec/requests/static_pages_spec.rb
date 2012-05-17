@@ -43,4 +43,16 @@ describe "Static pages" do
                     :text => "Ruby on Rails Tutorial Sample App | About Us")
     end
   end
+  describe "Content pages" do
+    it "should have the h1 'Content'"do
+      visit '/static_pages/content'
+      page.should have_selector('h1', :text => 'Content')
+    end
+    
+    it "should have the title 'Concent'" do
+      visit '/static_pages/content'
+      page.should have_selector('title', 
+                    :text =>"Content")
+    end
+  end
 end
